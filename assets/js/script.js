@@ -47,12 +47,13 @@ form.addEventListener('submit', event => {
     event.preventDefault();
 
     // Call the TMDB API
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${'014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940'}&with_genres=${genre}`)
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&with_genres=${genre}`)
         .then(response => {
+          console.log(response.status)
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
-          response.json();
+          return response.json();
         })
         
         .then(data => {
@@ -71,9 +72,9 @@ form.addEventListener('submit', event => {
 
                 // Call the Utelly API
                 (function(item) {
-                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${movie.title}&country=uk`, {
+                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${movie.title}&country=us`, {
                     headers: {
-                        'X-RapidAPI-Key': '014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940',
+                        'X-RapidAPI-Key': '1377ef1ebamsh3ae4eac1c9630b6p14b263jsn771bc01eb3c4',
                         'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
                     }
                   })
@@ -81,7 +82,7 @@ form.addEventListener('submit', event => {
                   if (!response.ok) {
                     throw new Error("Network response was not ok");
                   }
-                  response.json();
+                  return response.json();
                 })
 
                 .then(data => {
