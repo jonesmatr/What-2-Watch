@@ -74,7 +74,7 @@ form.addEventListener('submit', event => {
                 (function(item) {
                 fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${movie.title}&country=us`, {
                     headers: {
-                        'X-RapidAPI-Key': '1377ef1ebamsh3ae4eac1c9630b6p14b263jsn771bc01eb3c4',
+                        'X-RapidAPI-Key': '014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940',
                         'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
                     }
                   })
