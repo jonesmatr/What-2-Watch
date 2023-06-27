@@ -30,6 +30,29 @@
 
 // Select the form
 const form = document.querySelector('form');
+const genreSelect = document.querySelector('#genre-select');
+
+// Fetch genres from TMDB API
+fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&language=en-US`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Loop through the genres
+        for (let genre of data.genres) {
+            // Create an option element
+            const option = document.createElement('option');
+            option.value = genre.id;
+            option.textContent = genre.name;
+
+            // Append the option to the genre select
+            genreSelect.appendChild(option);
+        }
+    })
+    .catch(error => console.error('There has been a problem with your fetch operation:', error));
 
 // Select the carousel
 const carousel = document.querySelector('.carousel');
@@ -92,8 +115,10 @@ form.addEventListener('submit', event => {
                     }
                 })
                 .catch(error => console.error('There has been a problem with your fetch operation:',error));
+                // alert('Oops! Something went wrong. Please try again later.');
             })(item);
             }
           })
           .catch(error => console.error('There has been a problem with your fetch operation:',error));
+          // alert('Oops! Something went wrong. Please try again later.');
     });
