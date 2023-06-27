@@ -14,3 +14,16 @@ const settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMTY0MjRhNzZiOGRjYmEwZGU3MGI4NGZkMTJhYmRlMyIsInN1YiI6IjY0OWEyMGRlMjk3NWNhMDE0NGNjOTUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S3lnnuQ7KF-BGan5iMJitixVDKxQUvdkl26pyTxsgo0'
+    }
+  };
+  
+  fetch('https://api.themoviedb.org/3/authentication', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
