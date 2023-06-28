@@ -65,7 +65,7 @@ form.addEventListener('submit', event => {
 
                 // Call the Utelly API
                 (function(item) {
-                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${movie.title}&country=us`, {
+                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${item.textContent}&country=us`, {
                     headers: {
                         'X-RapidAPI-Key': '014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940',
                         'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
@@ -79,9 +79,10 @@ form.addEventListener('submit', event => {
                 })
 
                 .then(data => {
+                  console.log(data);
                     // Add the availability information to the item
-                    if(data.collection && data.collection.locations) {
-                    item.textContent += ' Available on: ' + data.collection.locations.map(location => location.name).join(', ');
+                    if(data.results[0] && data.results[0].locations) {
+                    item.textContent += ' Available on: ' + data.results[0].locations.map(location => location.display_name).join(', ');
                     }
                 })
                 .catch(error => console.error('There has been a problem with your fetch operation:',error));
