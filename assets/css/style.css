@@ -35,6 +35,7 @@ header {
 
 .column.card {
     display: flex;
+    height: 260px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
