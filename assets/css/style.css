@@ -2,9 +2,45 @@ html, body, .main-content {
     height: 100%;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header {
+    background-color: rgba(0, 0, 59, 0.759);
+    padding: 10px;
+    color: white;
+}
+
 .full-height {
     height: 100%;
-}  
+}
+
+.field {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .card {
     transition: transform .2s ease-in-out;
