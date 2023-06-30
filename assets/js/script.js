@@ -90,7 +90,10 @@ form.addEventListener('submit', event => {
                     <div class="content">
                       ${movie.overview}
                     </div>
-                  </div>
+                    <div class="availability"> <!-- This is the new div -->
+                      Availability: Loading...
+                    </div>
+                    </div>
                   </div>`;
 
 
@@ -103,7 +106,7 @@ form.addEventListener('submit', event => {
 
                 // Call the Utelly API
                 (function(item) {
-                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${item.textContent}&country=us`, {
+                fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${movie.title}&country=us`, {
                     headers: {
                         'X-RapidAPI-Key': '014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940',
                         'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
@@ -119,13 +122,16 @@ form.addEventListener('submit', event => {
                 .then(data => {
                   console.log(data);
                     // Add the availability information to the item
-                    if(data.results[0] && data.results[0].locations) {
-                    item.textContent += ' Available on: ' + data.results[0].locations.map(location => location.display_name).join(', ');
-                    }
+                    const availabilityDiv = item.querySelector('.availability');
+                  if(data.results[0] && data.results[0].locations) {
+                    availabilityDiv.textContent = 'Availability: ' + data.results[0].locations.map(location => location.display_name).join(', ');
+                  } else {
+                    availabilityDiv.textContent = 'Availability: Not available';
+                  }
                 })
                 .catch(error => console.error('There has been a problem with your fetch operation:',error));
                 // alert('Oops! Something went wrong. Please try again later.');
-            })(item);
+              })(item);
             }
           })
           .catch(error => console.error('There has been a problem with your fetch operation:',error));
