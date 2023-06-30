@@ -1,11 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: black;
+html, body, .main-content {
+    height: 100%;
 }
 
-<<<<<<< HEAD
 .full-height {
     height: 100%;
 }  
@@ -33,52 +29,3 @@ body {
     -webkit-box-orient: vertical;
   }
   
-=======
-h1 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-header {
-    background-color: rgba(0, 0, 59, 0.759);
-    padding: 10px;
-    color: white;
-}
-
-.field {
-    margin: 20px auto;
-    width: 80%;
-}
-
-.input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.column.card {
-    display: flex;
-    height: 260px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    margin: 10px 10px 20px 10px;
-    background-color: rgb(88, 88, 141);
-}
-
-.card {
-    transition: transform 0.2s ease-in-out;
-}
-
-.card-hover {
-    transform: scale(1.05);
-}
->>>>>>> cd3aa53b574e3ca8fcc282b490e8c63d6df3bf53
