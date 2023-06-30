@@ -23,9 +23,19 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0
             // Append the option to the genre select
             genreSelect.appendChild(option);
         }
+        const genreCards = document.querySelectorAll('.card');
+
+        genreCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.classList.add('card-hover');
+            });
+
+            card.addEventListener('mouseout', () => {
+                card.classList.remove('card-hover');
+            });
+        });
     })
     .catch(error => console.error('There has been a problem with your fetch operation:', error));
-
 // Select the carousel
 const carousel = document.querySelector('.carousel');
 
