@@ -5,3 +5,27 @@ html, body, .main-content {
 .full-height {
     height: 100%;
 }  
+
+.card {
+    transition: transform .2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ... other styles ... */
+
+.movie-card .image img {
+    max-height: 250px;
+  }
+  
+  .movie-card .content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100px; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+  }
+  

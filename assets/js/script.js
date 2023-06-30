@@ -1,6 +1,8 @@
 // Select the form
 const form = document.querySelector('form');
 const genreSelect = document.querySelector('#genre-select');
+const genreCards = document.querySelector('.card');
+
 
 // Fetch genres from TMDB API
 fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&language=en-US`)
@@ -55,13 +57,38 @@ form.addEventListener('submit', event => {
 
             // Loop through the movies
             for (let movie of data.results) {
+
+                // Create a column for each card
+                const column = document.createElement('div');
+                column.className = 'column is-one-quarter';
+
                 // Create a carousel item
                 const item = document.createElement('div');
-                item.className = 'carousel-item';
-                item.textContent = movie.title;
+                item.className = 'movie-card carousel-item';
+                item.innerHTML = `
+                  <div class="card-image">
+                    <figure class="image is-4by5">
+                      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4">${movie.title}</p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      ${movie.overview}
+                    </div>
+                  </div>`;
 
-                // Append the item to the carousel
-                carousel.appendChild(item);
+
+                // Append the item to the column
+                column.appendChild(item);
+                
+                // Append the column to the carousel
+                carousel.appendChild(column);
+            
 
                 // Call the Utelly API
                 (function(item) {
@@ -93,3 +120,14 @@ form.addEventListener('submit', event => {
           .catch(error => console.error('There has been a problem with your fetch operation:',error));
           // alert('Oops! Something went wrong. Please try again later.');
     });
+
+    // Add a change event listener to the genre select on homepage
+genreCards.forEach(card => {
+  card.addEventListener('mouseover', event => {
+    card.classList.add('card-hover');
+  });
+
+  card.addEventListener('mouseout', event => {
+    card.classList.remove('card-hover');
+  });
+});
