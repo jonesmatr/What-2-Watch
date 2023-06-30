@@ -70,14 +70,14 @@ form.addEventListener('submit', event => {
 
                 // Create a column for each card
                 const column = document.createElement('div');
-                column.className = 'column is-one-quarter';
+                column.className = 'column card movie-card is-4 m-1 level-item';
 
                 // Create a carousel item
                 const item = document.createElement('div');
-                item.className = 'movie-card carousel-item';
+                item.className = 'level-item carousel-item is-flex-wrap-wrap';
                 item.innerHTML = `
                   <div class="card-image">
-                    <figure class="image is-4by5">
+                    <figure class="image is-4by4">
                       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     </figure>
                   </div>
@@ -90,6 +90,7 @@ form.addEventListener('submit', event => {
                     <div class="content">
                       ${movie.overview}
                     </div>
+                  </div>
                   </div>`;
 
 

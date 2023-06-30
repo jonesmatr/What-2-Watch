@@ -2,12 +2,12 @@ html, body, .main-content {
     height: 100%;
 }
 
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: black;
-}
+} */
 
 h1 {
     text-align: center;
@@ -35,12 +35,12 @@ header {
     font-size: 16px;
 }
 
-.column {
+/* .column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .card {
     transition: transform .2s ease-in-out;
@@ -50,18 +50,5 @@ header {
     transform: scale(1.05);
 }
 
-/* ... other styles ... */
-
-.movie-card .image img {
-    max-height: 250px;
-  }
-  
-  .movie-card .content {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100px; 
-    display: -webkit-box;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical;
-  }
+/* ... other styles ... */  
   
