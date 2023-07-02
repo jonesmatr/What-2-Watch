@@ -40,16 +40,21 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0
 const carousel = document.querySelector('.carousel');
 
 // Add a submit event listener to the form
-form.addEventListener('submit', event => {
+// form.addEventListener('submit', event => {
     // Get the genre
-    const genre = event.target.querySelector('select').value;
+    // const genre = event.target.querySelector('select').value;
+
+// Add an event listener to the genre select
+    genreSelect.addEventListener('change', event => {
+    // Get the genre
+    const genre = event.target.value;
 
     if (!genre) {
         return;
     }
 
     // Prevent the form from being submitted
-    event.preventDefault();
+    // event.preventDefault();
 
     // Call the TMDB API
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&with_genres=${genre}`)
