@@ -61,10 +61,15 @@ searchButton.addEventListener('click', event => {
   if(query) {
     const searches = JSON.parse(localStorage.getItem('searches')) || [];
     if(!searches.includes(query)) {
-    searches.push(query);
+    // Add new search query to the beginning of the array
+      searches.unshift(query);
+    // If the size exceeds 10, remove the oldest search
+    if(searches.length > 10){
+      searches.pop();
     localStorage.setItem('searches', JSON.stringify(searches));
     }
   }
+}
   // Clear the search input
   if (!query) {
       return;
@@ -83,8 +88,9 @@ searchButton.addEventListener('click', event => {
     }
     
     historyList.className = 'history-list';
+    const lastTenSearches = searches.slice(0, 10);
 
-    searches.forEach(query => {
+    lastTenSearches.forEach(query => {
       const card = document.createElement('div');
       card.className = 'card history-card';
       card.innerHTML = `
@@ -109,6 +115,8 @@ searchButton.addEventListener('click', event => {
 
 // call updateSearchHistory function when the page loads
 updateSearchHistory();
+
+
 
   // Call the TMDB API
   fetch(`https://api.themoviedb.org/3/search/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&query=${query}`)
