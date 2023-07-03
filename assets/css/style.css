@@ -1,5 +1,6 @@
 html, body, .main-content {
     height: 100%;
+    background: rgb(22, 1, 71) !important;
 }
 
 /* body {
@@ -8,6 +9,12 @@ html, body, .main-content {
     padding: 0;
     background: black;
 } */
+
+.is-size-1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
 
 h1 {
     text-align: center;
@@ -35,13 +42,23 @@ header {
     font-size: 16px;
 }
 
+.columns-header {
+    display: flex;
+    height: 360px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 10px 10px 20px 10px;
+    background-color: rgb(88, 88, 141);
+}
+
 /* .column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 } */
-
 .card {
     transition: transform .2s ease-in-out;
 }
