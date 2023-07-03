@@ -3,7 +3,6 @@ const form = document.querySelector('form');
 const genreSelect = document.querySelector('#genre-select');
 const genreCards = document.querySelector('.card');
 
-
 // Select the search input and button
 const searchInput = document.querySelector('.input');
 const searchButton = document.querySelector('.button');
@@ -58,9 +57,58 @@ searchButton.addEventListener('click', event => {
   // Get the search query
   const query = searchInput.value;
 
+  // add this line to store the search query in the localStorage
+  if(query) {
+    const searches = JSON.parse(localStorage.getItem('searches')) || [];
+    if(!searches.includes(query)) {
+    searches.push(query);
+    localStorage.setItem('searches', JSON.stringify(searches));
+    }
+  }
+  // Clear the search input
   if (!query) {
       return;
   }
+
+  function updateSearchHistory() {
+    const searches = JSON.parse(localStorage.getItem('searches')) || [];
+    const historyDiv = document.querySelector('.aside-buttons');
+    const historyList = document.createElement('ul');
+    historyList.className = 'history-list';
+
+    //Clear old list
+    const oldList = document.querySelector('.history-list');
+    if (oldList) {
+        historyDiv.removeChild(oldList);
+    }
+    
+    historyList.className = 'history-list';
+
+    searches.forEach(query => {
+      const card = document.createElement('div');
+      card.className = 'card history-card';
+      card.innerHTML = `
+          <div class="card-content">
+              <div class="media">
+                  <div class="media-content">
+                      <p class="title is-4">${query}</p>
+                  </div>
+              </div>
+          </div>
+      `;
+      card.addEventListener('click', () => {
+          searchInput.value = query;
+          searchButton.click();
+      });
+        historyList.appendChild(card);
+    });
+
+    // append the history list to the aside buttons div
+    historyDiv.appendChild(historyList);
+}
+
+// call updateSearchHistory function when the page loads
+updateSearchHistory();
 
   // Call the TMDB API
   fetch(`https://api.themoviedb.org/3/search/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&query=${query}`)
