@@ -51,3 +51,8 @@ header {
 }
 
 /* ... other styles ... */  
+
+.history-card {
+    cursor: pointer;
+    margin-top: 10px;
+}
