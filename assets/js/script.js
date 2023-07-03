@@ -3,9 +3,16 @@ const form = document.querySelector('form');
 const genreSelect = document.querySelector('#genre-select');
 const genreCards = document.querySelector('.card');
 
+
 // Select the search input and button
 const searchInput = document.querySelector('.input');
 const searchButton = document.querySelector('.button');
+
+//Select the random button
+const randomButton = document.querySelector('.random-button');
+
+//Select the back button
+const backButton = document.querySelector('.back-button');
 
 // Fetch genres from TMDB API
 fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&language=en-US`)
@@ -19,7 +26,7 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'a16424a76b8dcba0
         // Loop through the genres
         for (let genre of data.genres) {
             // Create an option element
-            const option = document.createElement('option');
+            const option = document.createElement('option') ;
             option.value = genre.id;
             option.textContent = genre.name;
 
@@ -229,6 +236,22 @@ searchButton.addEventListener('click', event => {
           .catch(error => console.error('There has been a problem with your fetch operation:',error));
           // alert('Oops! Something went wrong. Please try again later.');
     });
+
+// Add an event listener to the random button
+randomButton.addEventListener('click', () => {
+  let genreOptions = Array.from(genreSelect.options);
+  let randomIndex = Math.floor(Math.random() * genreOptions.length);
+  genreSelect.selectedIndex = randomIndex;
+
+  // trigger change event
+  let event = new Event('change');
+  genreSelect.dispatchEvent(event);
+});
+
+// Add an event listener to the back button
+backButton.addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
 
     // Add a change event listener to the genre select on homepage
 genreCards.forEach(card => {
