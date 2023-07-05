@@ -128,7 +128,7 @@ searchButton.addEventListener("click", (event) => {
   updateSearchHistory();
 });
 
-// Search movies
+// Search movies function (TMDB API)
 function searchMovies(query) {
   fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${"a16424a76b8dcba0de70b84fd12abde3"}&query=${query}`
@@ -139,7 +139,7 @@ function searchMovies(query) {
       }
       return response.json();
     })
-    .then((data) => populateMovies(data))
+    .then((data) => populateMovies(data)) // Call the populateMovies function
     .catch((error) =>
       console.error(
         "There has been a problem with your fetch operation:",
@@ -208,12 +208,13 @@ function populateMovies(data) {
       .then((data) => {
         // Add the availability information to the item
         const availabilityDiv = item.querySelector(".availability");
+        // Check if there is any location
         if (data.results[0] && data.results[0].locations) {
           availabilityDiv.textContent =
             "Availability: " +
-            data.results[0].locations
-              .map((location) => location.display_name)
-              .join(", ");
+            data.results[0].locations // Get the locations
+              .map((location) => location.display_name) // Get the display names
+              .join(", "); // Join the names with a comma
         } else {
           availabilityDiv.textContent = "Availability: Not available";
         }
