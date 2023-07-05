@@ -1,0 +1,62 @@
+html, body, .main-content {
+    height: 100%;
+    background: rgb(22, 1, 71) !important;
+}
+
+header {
+    background-color: rgba(0, 0, 59, 0.759);
+    padding: 10px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgb(88, 88, 141);
+    padding: 10px;
+}
+
+.input {
+    margin-right: 10px;
+}
+
+.random-button {
+    margin-right: 10px;
+}
+
+.back-button {
+    margin-right: 10px;
+}
+
+.dropdown {
+    margin-right: 10px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.card {
+    transition: transform .2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ... other styles ... */  
+
+.history-card {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.carousel {
+    font-size: large;
+    font-family:'Courier New', Courier, monospace;
+    box-shadow: inset;
+    background-color: rgb(88, 88, 141);
+}
