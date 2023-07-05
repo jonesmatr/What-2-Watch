@@ -43,7 +43,6 @@ function addGenreCardListeners() {
   });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   // Get the search query from the local storage
   const query = localStorage.getItem('query');
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update the search history
   updateSearchHistory();
 });
-
 
 // Add a click event listener to the search button
 searchButton.addEventListener('click', event => {
@@ -204,7 +202,6 @@ function populateMovies(data) {
       })
       .catch(error => console.error('There has been a problem with your fetch operation:', error));
   }
-
 }
 
 // Add an event listener to the search button
@@ -216,7 +213,6 @@ searchButton.addEventListener('click', event => {
   // Update the search history
   updateSearchHistory();
 });
-
 
 // Genre select event listener
 genreSelect.addEventListener('change', event => {
