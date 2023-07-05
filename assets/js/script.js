@@ -43,6 +43,22 @@ function addGenreCardListeners() {
   });
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the search query from the local storage
+  const query = localStorage.getItem('query');
+
+  // Set the search input value to the query
+  searchInput.value = query;
+
+  // Trigger a click event on the search button
+  searchButton.click();
+
+  // Update the search history
+  updateSearchHistory();
+});
+
+
 // Add a click event listener to the search button
 searchButton.addEventListener('click', event => {
   // Prevent the form from being submitted
@@ -197,11 +213,10 @@ searchButton.addEventListener('click', event => {
   const query = searchInput.value;
   // Call the searchMovies function
   searchMovies(query);
-  // Add the search query to the search history
-  // addSearchToHistory(query);
   // Update the search history
   updateSearchHistory();
 });
+
 
 // Genre select event listener
 genreSelect.addEventListener('change', event => {
