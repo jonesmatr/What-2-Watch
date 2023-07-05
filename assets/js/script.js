@@ -1,23 +1,12 @@
-// Select the form
 const form = document.querySelector('form');
 const genreSelect = document.querySelector('#genre-select');
 const genreCards = document.querySelector('.card');
-
-// Select the search input and button from homepage page
 const homeInput = document.querySelector('.home-input');
 const homeSearch = document.querySelector('.home-search');
-
-// Select the search input and button from search results page
 const searchInput = document.querySelector('.input');
 const searchButton = document.querySelector('.button');
-
-//Select the random button
 const randomButton = document.querySelector('.random-button');
-
-//Select the back button
 const backButton = document.querySelector('.back-button');
-
-// Select the carousel
 const carousel = document.querySelector('.carousel');
 
 // Fetch genres from TMDB API
@@ -213,7 +202,6 @@ searchButton.addEventListener('click', event => {
   // Update the search history
   updateSearchHistory();
 });
-
 
 // Genre select event listener
 genreSelect.addEventListener('change', event => {
