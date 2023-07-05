@@ -161,25 +161,29 @@ function populateMovies(data) {
     const item = document.createElement("div");
     item.className = "level-item carousel-item is-flex-wrap-wrap";
     item.innerHTML = `
-          <div class="card-image">
-              <figure class="image is-4by4">
-                  <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-              </figure>
-          </div>
-          <div class="card-content">
-              <div class="media">
-                  <div class="media-content">
-                      <p class="title is-4">${movie.title}</p>
-                  </div>
-              </div>
-              <div class="content">
-                  ${movie.overview}
-              </div>
-              <div class="availability"> <!-- This is the new div -->
-                  Availability: Loading...
+    <div class="card-image">
+          <figure class="image is-4by4">
+              <img src="${
+                movie.poster_path
+                  ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                  : "assets/img/clapper-board.png"
+              }" alt="${movie.title}">
+          </figure>
+      </div>
+      <div class="card-content">
+          <div class="media">
+              <div class="media-content">
+                  <p class="title is-4">${movie.title}</p>
               </div>
           </div>
-      </div>`;
+          <div class="content">
+              ${movie.overview}
+          </div>
+          <div class="availability"> <!-- This is the new div -->
+              Availability: Loading...
+          </div>
+      </div>
+  </div>`;
 
     // Append the item to the column
     column.appendChild(item);
