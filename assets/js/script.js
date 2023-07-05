@@ -53,34 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Update the search history
   updateSearchHistory();
+
 });
 
-// Add a click event listener to the search button
-searchButton.addEventListener('click', event => {
-  // Prevent the form from being submitted
-  event.preventDefault();
-
-  // Get the search query
-  const query = searchInput.value;
-
-  // add this line to store the search query in the localStorage
-  if (query) {
-    const searches = JSON.parse(localStorage.getItem('searches')) || [];
-    if (!searches.includes(query)) {
-      // Add new search query to the beginning of the array
-      searches.unshift(query);
-      // If the size exceeds 10, remove the oldest search
-      if (searches.length > 10) {
-        searches.pop();
-        localStorage.setItem('searches', JSON.stringify(searches));
-      }
-    }
-  }
-  // Clear the search input
-  if (!query) {
-    return;
-  }
-
+// Define updateSearchHistory function
   function updateSearchHistory() {
     const searches = JSON.parse(localStorage.getItem('searches')) || [];
     const historyDiv = document.querySelector('.aside-buttons');
@@ -119,7 +95,34 @@ searchButton.addEventListener('click', event => {
     historyDiv.appendChild(historyList);
   }
 
-  // call updateSearchHistory function when the page loads
+
+// Add a click event listener to the search button
+searchButton.addEventListener('click', event => {
+  // Prevent the form from being submitted
+  event.preventDefault();
+
+  // Get the search query
+  const query = searchInput.value;
+
+  // add this line to store the search query in the localStorage
+  if (query) {
+    const searches = JSON.parse(localStorage.getItem('searches')) || [];
+    if (!searches.includes(query)) {
+      // Add new search query to the beginning of the array
+      searches.unshift(query);
+      // If the size exceeds 10, remove the oldest search
+      if (searches.length > 10) {
+        searches.pop();
+      }
+    }
+        localStorage.setItem('searches', JSON.stringify(searches));
+      }
+  // Clear the search input
+  if (!query) {
+    return;
+  }
+
+  // Call updateSearchHistory function when the page loads
   updateSearchHistory();
 
 });
