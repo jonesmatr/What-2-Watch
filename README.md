@@ -2,6 +2,8 @@
 
 The What-2-Watch project is a web application designed to assist users in finding movie recommendations and searching for specific movies, then showing what platform the movie can be watched on. It's for people who can't make decisions about what they want to watch and need a way to explore more viewing options.
 
+The site can be accessed [here](https://jonesmatr.github.io/What-2-Watch/).
+
 ## Features
 
 1. **Movie Suggestions**: The project offers a curated collection of movie recommendations based on various genres, ratings, and popular choices.
