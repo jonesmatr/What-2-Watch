@@ -8,7 +8,7 @@ html, body, .main-content {
 }
 
 header {
-    background-color: rgba(0, 0, 59, 0.759);
+    background-color: var(--background-colour);
     padding: 10px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -45,6 +45,8 @@ header {
 
 .card {
     transition: transform .2s ease-in-out;
+    background-color: var(--background-colour);
+    color: white;
 }
 
 .card:hover {
