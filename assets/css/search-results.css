@@ -1,6 +1,10 @@
+:root {
+    --background-colour:  rgb(22, 1, 71) !important;
+}
+
 html, body, .main-content {
     height: 100%;
-    background: rgb(22, 1, 71) !important;
+    background:var(--background-colour)
 }
 
 header {
