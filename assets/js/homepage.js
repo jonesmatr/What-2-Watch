@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('There has been a problem with your fetch operation:', error));
   // Populate genres
   function populateGenres(data) {
-    const columnsHeader = document.querySelector(".columns-header");
+    const columnsHeader = document.querySelector(".columns");
     for (let genre of data.genres) {
       // Create a new 'div' for each genre
       const genreDiv = document.createElement("div");
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (data.results[0]) {
             const movie = data.results[0];
             genreDiv.innerHTML = `
+            <div class="column">
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   </div>
                 </div>
               </div>
+            </div>
             `;
             columnsHeader.appendChild(genreDiv);
           }
