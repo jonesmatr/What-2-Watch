@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&with_genres=${genre.id}&language=en-US&page=1`)
         .then(response => response.json())
         .then(data => {
-          if (data.results[0]) {
-            const movie = data.results[0];
+          if (data.results[3]) {
+            const movie = data.results[3];
             genreDiv.innerHTML = `
             <div class="column">
               <div class="card">
