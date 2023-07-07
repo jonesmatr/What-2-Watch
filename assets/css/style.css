@@ -3,7 +3,7 @@
 }
 html, body, .main-content {
     height: 100%;
-    background: var(--background-colourq);
+    background: var(--background-colour)
 }
 
 /* body {
