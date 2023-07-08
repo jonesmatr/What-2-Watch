@@ -70,7 +70,11 @@ header {
     transform: scale(1.05);
 }
 
-
+.Number2 {
+    color: purple;
+    font-weight: bolder;
+    font-size: 100px;
+}
 /* ... other styles ... */  
 
 .history-card {
