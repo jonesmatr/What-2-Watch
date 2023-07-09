@@ -1,5 +1,5 @@
 :root {
-    --background-colour:  rgb(22, 1, 71) !important;
+    --background-colour:  rgb(41, 24, 80) !important;
 }
 
 html, body, .main-content {
@@ -45,7 +45,7 @@ header {
 
 .card {
     transition: transform .2s ease-in-out;
-    background-color: var(--background-colour);
+    background-color:purple;
     color: white;
 }
 
@@ -60,6 +60,10 @@ header {
 }
 /* ... other styles ... */  
 
+.title {
+    color: white;
+}
+
 .history-card {
     cursor: pointer;
     margin-top: 10px;
@@ -69,5 +73,5 @@ header {
     font-size: large;
     font-family:'Courier New', Courier, monospace;
     box-shadow: inset;
-    background-color: rgb(88, 88, 141);
+    background-color:var(--background-colour);
 }

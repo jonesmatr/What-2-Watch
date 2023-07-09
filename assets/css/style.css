@@ -1,5 +1,5 @@
 :root {
-    --background-colour:  rgb(22, 1, 71) !important;
+    --background-colour:  rgb(41, 24, 80) !important;
 }
 html, body, .main-content {
     height: 100%;
@@ -41,7 +41,7 @@ header {
 
 .home-input {
     width: 100%;
-    padding: 10px;
+    padding: 13px;
     font-size: 16px;
 }
 
@@ -56,6 +56,10 @@ header {
     background-color: rgb(88, 88, 141);
 }
 
+.title {
+    color: white;
+}
+
 /* .column {
     display: flex;
     flex-direction: column;
@@ -64,7 +68,24 @@ header {
 } */
 .card {
     transition: transform .2s ease-in-out;
+    background-color: purple;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 3px solid black;
+    text-align: center;
 }
+
+.card-image img{
+        object-fit:scale-down;
+    width: 50%;
+    height: 50%;
+}
+
 
 .card:hover {
     transform: scale(1.05);
