@@ -10,7 +10,7 @@ The site can be accessed [here](https://jonesmatr.github.io/What-2-Watch/).
 
 2. **Movie Search**: Users can search for specific movies by entering keywords or movie titles.
 
-3. **Random Movie Picker**: Users can utilize the random movie picker feature, which randomly selects a movie from the available collection, helping users discover new movies or make impromptu choices.
+3. **Random Movie Picker**: Users can utilize the random movie picker feature, which randomly selects a list of movies from the available collection, helping users discover new movies or make impromptu choices.
 
 ## Technologies Used
 
@@ -19,6 +19,7 @@ The project utilizes the following technologies:
 - HTML: Markup language for structuring the web pages.
 - CSS: Cascading Style Sheets for styling the web pages.
 - JavaScript: Programming language for implementing interactivity and functionality.
+- Bulma.io:  A free and open-source CSS framework for building responsive and modern web interfaces
 
 ## How to Use
 
@@ -30,13 +31,11 @@ To use the What-2-Watch project, follow these steps:
 
 3. Launch the application by opening either of the two HTML files provided.
 
-4. Browse the movie recommendations by selecting different genres, ratings, or popular choices.
+4. Browse the movie recommendations by selecting different genres
+   
+6. To search for a specific movie, use the search functionality provided on the "search-results.html" page.
 
-5. To search for a specific movie, use the search functionality provided on the "search-results.html" page.
-
-6. To randomly select a movie, click on the "Random Movie" button.
-
-7. Enjoy your selected movie!
+7. To randomly select a movie, click on the "Random Movie" button.
 
 ## Project Structure
 
@@ -61,14 +60,8 @@ To access external APIs, the project requires the following API keys:
 - Utelly API Key: 014185e72cmsh93a40585366113fp1ab874jsn76d5fb150940
   - Utelly API documentation: [utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com](utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com)
 
-## Contributing
-
-Contributions to the What-2-Watch project are welcome. If you would like to contribute, please follow the standard guidelines for contributing to open-source projects, including fork, branch, make changes, and submit a pull request.
 
 ## License
 
 The What-2-Watch project is licensed under the [MIT License](LICENSE).
 
-## Contact
-
-For any questions, feedback, or suggestions, please feel free to contact the project team at [email@example.com].
