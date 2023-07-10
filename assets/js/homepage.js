@@ -1,3 +1,10 @@
+// This event is fired every time the page is loaded, including when navigating back to the page
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
+
 const homeInput = document.querySelector(".home-input");
 const homeSearch = document.querySelector(".home-search");
 
