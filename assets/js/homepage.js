@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Create a new 'div' for each genre
       const genreDiv = document.createElement("div");
       genreDiv.className = "column is-one-quarter"; // Bulma class for grid layout
-      // Fetch the first movie in each genre
+      // Fetch the third movie in each genre
       fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${'a16424a76b8dcba0de70b84fd12abde3'}&with_genres=${genre.id}&language=en-US&page=1`)
         .then(response => response.json())
         .then(data => {
@@ -72,6 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
             columnsHeader.appendChild(genreDiv);
           }
         });
+
+        // Add click event listener to the genreDiv
+    genreDiv.addEventListener('click', () => {
+      // Store the genre ID in local storage
+      localStorage.setItem('genre', genre.id);
+      // Redirect to the search-results.html page
+      window.location.href = 'search-results.html';
+    });
+    
     }
   }
 });

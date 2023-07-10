@@ -7,6 +7,18 @@ const randomButton = document.querySelector(".random-button");
 const backButton = document.querySelector(".back-button");
 const carousel = document.querySelector(".carousel");
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the genre ID from local storage
+  const genre = localStorage.getItem('genre');
+  // If a genre ID was stored
+  if (genre) {
+    // Fetch and display the movies of that genre
+    fetchMoviesByGenre(genre);
+    // Clear the genre ID from local storage
+    localStorage.removeItem('genre');
+  }
+});
+
 // Fetch genres from TMDB API
 fetch(
   `https://api.themoviedb.org/3/genre/movie/list?api_key=${"a16424a76b8dcba0de70b84fd12abde3"}&language=en-US`
@@ -254,6 +266,7 @@ genreSelect.addEventListener("change", (event) => {
 // Fetch movies by genre
 function fetchMoviesByGenre(genre) {
   // Clear the carousel
+  genreSelect.value = genre;
   carousel.innerHTML = "";
 
   fetch(
