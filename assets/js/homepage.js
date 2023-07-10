@@ -1,3 +1,4 @@
+
 const homeInput = document.querySelector(".home-input");
 const homeSearch = document.querySelector(".home-search");
 
