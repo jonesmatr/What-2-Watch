@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const genre = localStorage.getItem('genre');
   // If a genre ID was stored
   if (genre) {
+    // Convert the genre ID to a number
+    const genreId = parseInt(genre, 10);
     // Fetch and display the movies of that genre
     fetchMoviesByGenre(genre);
     // Clear the genre ID from local storage
@@ -29,7 +31,7 @@ fetch(
     }
     return response.json();
   })
-  .then((data) => populateGenres(data))
+  .then((data) => populateGenres(data))  
   .catch((error) =>
     console.error("There has been a problem with your fetch operation:", error)
   );
