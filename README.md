@@ -4,7 +4,7 @@ The What-2-Watch project is a web application designed to assist users in findin
 
 The site can be accessed [here](https://jonesmatr.github.io/What-2-Watch/).
 
-![What-2-Watch](./assets/images/Website-Screenshot.jpg)
+![What-2-Watch](./assets/img/Website-Screenshot.jpg)
 
 ## Features
 
