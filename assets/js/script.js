@@ -7,6 +7,10 @@ const randomButton = document.querySelector(".random-button");
 const backButton = document.querySelector(".back-button");
 const carousel = document.querySelector(".carousel");
 
+window.onunload = function() {
+  return null;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Get the genre ID from local storage
   const genre = localStorage.getItem('genre');
