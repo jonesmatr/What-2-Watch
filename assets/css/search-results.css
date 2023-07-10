@@ -11,7 +11,7 @@ header {
     background-color: var(--background-colour);
     padding: 10px;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
 }
 
@@ -74,4 +74,15 @@ header {
     font-family:'Courier New', Courier, monospace;
     box-shadow: inset;
     background-color:var(--background-colour);
+    padding: 5%;
 }
+
+.column {
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .column {
+      padding: 0;
+    }
+  }
